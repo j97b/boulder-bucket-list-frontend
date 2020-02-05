@@ -1,4 +1,4 @@
-let urlPre ="/bbl";
+let urlPre ="/";
 
 function createTable() {
     let userId = sessionStorage.getItem("userID");

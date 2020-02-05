@@ -1,14 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('--Isolate frontend folder--') {
-            steps {
-                sh "cd src/main/resources/static/"
-            }
-        }
         stage('--Build front-end--') {
             steps {
-                sh "docker build -f DockerfileFrontend -t bbl-frontend-test ."
+                sh "docker build -t bbl-frontend-test ."
             }
         }
         stage('--deploy--') {

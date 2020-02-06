@@ -13,10 +13,10 @@ pipeline {
                 sh "docker push tigs1995/bbl-frontend-test"
             }
         }
-//        stage('--Deploy--') {
-//            steps {
-//                sh "ssh -i 'project.pem' ubuntu@ec2-35-176-135-139.eu-west-2.compute.amazonaws.com"
-//          }
-//        }
+        stage('--Deploy--') {
+            steps {
+                sh "ssh -i /home/jenkins/project.pem ubuntu@ec2-35-176-135-139.eu-west-2.compute.amazonaws.com './script.sh'"
+          }
+        }
     }
 }

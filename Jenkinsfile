@@ -3,14 +3,14 @@ pipeline {
     stages {
         stage('--Build front-end--') {
             steps {
-                sh "docker build -t bbl-frontend ."
+                sh "docker build -t bbl-frontend-production ."
             }
         }
         stage('--Push docker image--') {
             steps {
                 sh "docker login -u ${env.DOCKER_USER} -p ${env.DOCKER_PSSWRD}"
-                sh "docker tag bbl-frontend tigs1995/bbl-frontend"
-                sh "docker push tigs1995/bbl-frontend"
+                sh "docker tag bbl-frontend-production tigs1995/bbl-frontend-production"
+                sh "docker push tigs1995/bbl-frontend-production"
             }
         }
         stage('--Deploy to test environment--') {

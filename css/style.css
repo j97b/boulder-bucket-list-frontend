@@ -5,6 +5,7 @@ body {
 
 button {
     font-family: 'Orbitron', serif;
+    animation: spin 2s infinite linear;
 }
 
 thead {
@@ -193,5 +194,14 @@ td {
 
 #names {
     width: 200px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
